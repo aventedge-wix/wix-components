@@ -1,20 +1,42 @@
 (function () {
 
+const ICONS = {
+
+  university: `<svg viewBox="0 0 64 64">
+    <path d="M10 28l22-14 22 14H10z" fill="#f98513"/>
+    <path d="M14 54V28M50 54V28M32 54V28" stroke="#111144" stroke-width="3" stroke-linecap="round"/>
+    <path d="M10 54h44" stroke="#111144" stroke-width="3" stroke-linecap="round"/>
+  </svg>`,
+
+  private: `<svg viewBox="0 0 64 64">
+    <rect x="8" y="22" width="48" height="34" rx="3" stroke="#111144" stroke-width="3" fill="none"/>
+    <path d="M24 56V38h16v18" stroke="#111144" stroke-width="3" fill="none"/>
+    <path d="M8 34h48" stroke="#f98513" stroke-width="3"/>
+  </svg>`,
+
+  public: `<svg viewBox="0 0 64 64">
+    <circle cx="32" cy="32" r="22" stroke="#111144" stroke-width="3" fill="none"/>
+    <path d="M32 10v44M10 32h44" stroke="#111144" stroke-width="2"/>
+    <path d="M14 18c5 4 10 6 18 6s13-2 18-6M14 46c5-4 10-6 18-6s13 2 18 6" stroke="#f98513" stroke-width="2.5" fill="none"/>
+  </svg>`
+
+};
+
 const BENEFITS = [
   {
+    icon: ICONS.university,
     title: "Universities & Tertiary",
-    desc: "Leaders accountable for curriculum reform, graduate employment outcomes, and institutional performance metrics in an evolving landscape.",
-    iconPaths: '<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>'
+    desc: "Leaders accountable for curriculum reform, graduate employment outcomes, and institutional performance metrics in an evolving landscape."
   },
   {
+    icon: ICONS.private,
     title: "Private Sector",
-    desc: "Chief People Officers designing graduate programs, strengthening long-term retention, and planning for organizational capability.",
-    iconPaths: '<rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>'
+    desc: "Chief People Officers designing graduate programs, strengthening long-term retention, and planning for organizational capability."
   },
   {
+    icon: ICONS.public,
     title: "Public Sector",
-    desc: "Policy and workforce leaders overseeing education reform, labour market strategy, and nationwide AI-ready initiatives.",
-    iconPaths: '<path d="M3 21h18"/><path d="M3 7l9-4 9 4"/><path d="M5 21V7"/><path d="M19 21V7"/>'
+    desc: "Policy and workforce leaders overseeing education reform, labour market strategy, and nationwide AI-ready initiatives."
   }
 ];
 
@@ -59,22 +81,13 @@ const CSS = `
     transition: background 0.3s ease, transform 0.3s ease;
     flex-shrink: 0;
   }
+  .icon svg {
+    width: 44px;
+    height: 44px;
+  }
   .item:hover .icon {
     background: #111144;
     transform: scale(1.1) rotate(5deg);
-  }
-  .icon svg {
-    width: 36px;
-    height: 36px;
-    stroke: #111144;
-    stroke-width: 2;
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    transition: stroke 0.3s ease;
-  }
-  .item:hover .icon svg {
-    stroke: #ffffff;
   }
   .accent {
     width: 40px;
@@ -131,12 +144,7 @@ class BenefitSections extends HTMLElement {
 
       const icon = document.createElement("div");
       icon.className = "icon";
-
-      const svg = document.createElement("svg");
-      svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-      svg.setAttribute("viewBox", "0 0 24 24");
-      svg.innerHTML = b.iconPaths;
-      icon.appendChild(svg);
+      icon.innerHTML = b.icon;
 
       const accent = document.createElement("div");
       accent.className = "accent";
