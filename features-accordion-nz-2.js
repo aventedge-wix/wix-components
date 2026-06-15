@@ -21,7 +21,7 @@ const FEATURES = [
   {
     heading: "Interactive discussions, workplace case studies and scenario-led learning",
     body: "Engage in hands-on, real-world case studies designed to help you resolve complex operational vulnerabilities and reduce strict legal exposure.",
-    image: "https://static.wixstatic.com/media/958742_f767c154f8f04d9f97a253257b078716~mv2.jpg",
+    image: "https://static.wixstatic.com/media/958742_68cafaf7e91b40bb9353bc0d484b4fb2~mv2.jpg",
     speakerBlocks: [],
     subSessions: [
       {
@@ -74,7 +74,7 @@ const FEATURES = [
   {
     heading: "Provides practical strategies to manage complex people issues and reduce organisational risk",
     body: "Unpack the legal intricacies of senior employee management, exit risks, and embedding measurable fairness into organizational decision-making.",
-    image: "https://static.wixstatic.com/media/958742_19ed39754d334d0180fc062ce8fb44b5~mv2.jpg",
+    image: "https://static.wixstatic.com/media/958742_6e3f7af97469401cb514ea81d96d7fd2~mv2.jpg",
     speakerBlocks: [
       {
         label: "Featuring:",
